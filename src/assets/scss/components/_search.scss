@@ -1,0 +1,57 @@
+.search {
+    &-draft {
+        display: flex;
+        flex-direction: column;
+        gap: .65rem;
+        align-items: start;
+
+        color: map-get($colors, "yellow");
+
+        &__label {
+            font-weight: bold;
+            font-size: 1.126rem;
+            color: inherit;
+        }
+
+        &__group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            &-input {
+                background-color: map-get($colors, "grass-green");
+                border-radius: .265rem;
+                border: none;
+                font-size: 1.05rem;
+                color: map-get($colors, "blue");
+    
+                padding: .265rem .6rem;
+    
+                &:focus {
+                    border: 1px solid map-get($colors, "blue");
+                }
+            }            
+    
+            &-button {
+                background-color: map-get($colors, "yellow");
+                color: map-get($colors, "blue");
+    
+                font-weight: bold;
+                
+                border: none;
+                border-radius: .356rem;
+
+                padding: .562rem .436rem;
+
+                &:hover,
+                &:focus {
+                    transition: 0.5s;
+                    background-color: map-get($colors, "blue");
+                    color: map-get($colors, "yellow");
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

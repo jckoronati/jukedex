@@ -1,0 +1,58 @@
+.pokemon {
+    &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        color: map-get($colors, "yellow");
+
+        &__introduce {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+
+            &-name {
+                font-size: 2.165rem;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+
+            &-order {
+                font-size: 1.125rem;
+                font-weight: thin;
+            }
+        }
+
+        &__about {
+            &-item {
+                font-size: 1.562rem;
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &__group {
+            &-abilities {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                gap: 1.256rem;
+
+                &-title {
+                    margin: 0;
+
+                    font-size: 1.256rem;
+                    font-weight: bold;
+                }
+
+                &-group {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    gap: .236rem;
+                }
+            }
+        }
+    }
+}

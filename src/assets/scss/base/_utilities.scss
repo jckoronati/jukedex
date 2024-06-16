@@ -1,0 +1,44 @@
+.u-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.bg {
+    &-red {
+        background-color: map-get($colors, "red");
+    }
+
+    &-grass {
+        &-dark {
+            background-color: map-get($colors, "dark-grass-green");
+        }
+    }
+}
+
+.u-flex {
+    display: flex;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.u-w100 {
+    width: 100%;
+}
+
+.draft {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: map-get($colors, "grass-green");
+}

@@ -1,0 +1,11 @@
+.home {
+    padding: 1rem .256rem;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 1rem;
+
+    background-color: map-get($colors, "dark-grass-green");
+}

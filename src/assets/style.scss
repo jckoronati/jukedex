@@ -1,0 +1,10 @@
+@use "sass:map";
+
+@import './scss/base/reset';
+@import './scss/base/variables';
+@import './scss/base/utilities';
+
+@import './scss/components/search';
+@import './scss/components/pokemon';
+
+@import './scss/generics/home';
