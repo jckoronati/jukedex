@@ -6,10 +6,18 @@ const keyword = defineModel("keyword", { default: '' });
 
 const pokemonData = reactive({});
 
+const responseStatus = reactive({ status: null });
+
 async function fetchPokeData(keyword) {
     const url = "https://pokeapi.co/api/v2/pokemon/"
 
     const result = await fetch(url + keyword.toLowerCase());
+
+    responseStatus.status = result.status;
+
+    if (responseStatus.status !== 200) {
+        return;
+    }
 
     const data = await result.json();
 
