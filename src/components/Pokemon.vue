@@ -17,7 +17,7 @@ const props = defineProps({ pokemon: { default: null } });
                 <h2 class="pokemon-info__group-abilities-title">Abilities</h2>
                 <div class="pokemon-info__group-abilities-group">
                     <div v-for="item in props.pokemon.abilities" class="pokemon-info__group-abilities-group-item">
-                        <h3 class="pokemon-info__group-abilities-item-name">{{ item.ability.name }}</h3>
+                        <h3 class="pokemon-info__group-abilities-group-item-name">{{ item.ability.name }}</h3>
                     </div>
                 </div>
             </div>
