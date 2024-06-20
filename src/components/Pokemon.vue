@@ -1,9 +1,9 @@
 <script setup>
-const props = defineProps({ pokemon: { default: null } });
+const props = defineProps({ pokemon: { default: null }, status: { default: null } });
 </script>
 
 <template>
-    <div v-if="props.pokemon.name !== undefined" class="pokemon-info">
+    <div v-if="props.pokemon.name !== undefined && status && status === 200" class="pokemon-info">
         <div class="pokemon-info__introduce">
             <h1 class="pokemon-info__introduce-name">{{ props.pokemon.name }}</h1>
             <img class="pokemon-info__introduce-image" :src="props.pokemon.sprites.front_default" />

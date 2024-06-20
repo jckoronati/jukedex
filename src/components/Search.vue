@@ -37,7 +37,10 @@ async function fetchPokeData(keyword) {
                     </div>
                 </div>
             </div>
-            <Pokemon :pokemon="pokemonData"/>
+            <Pokemon :pokemon="pokemonData" :status="responseStatus.status"/>
+            <div v-if="responseStatus.status !== null && responseStatus.status !== 200">
+                <p>Something went wrong! Try again later.</p>
+            </div>
         </div>
     </section>    
 </template>
