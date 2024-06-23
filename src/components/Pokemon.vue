@@ -1,4 +1,6 @@
 <script setup>
+import Abilities from './Abilities.vue';
+
 const props = defineProps({ pokemon: { default: null }, status: { default: null } });
 </script>
 
@@ -15,13 +17,7 @@ const props = defineProps({ pokemon: { default: null }, status: { default: null 
         <div class="pokemon-info__group">
             <div class="pokemon-info__group-abilities">
                 <h2 class="pokemon-info__group-abilities-title">Abilities</h2>
-                <div class="pokemon-info__group-abilities-group">
-                    <div v-for="item in props.pokemon.abilities" class="pokemon-info__group-abilities-group-item">
-                        <button class="pokemon-info__group-abilities-group-item-button" data-url="{{  item.ability.url  }}">
-                            {{ item.ability.name }}
-                        </button>                        
-                    </div>
-                </div>
+                <Abilities :abilities="props.pokemon.abilities" />
             </div>
         </div>
     </div>

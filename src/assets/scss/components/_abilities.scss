@@ -1,0 +1,33 @@
+@use "sass:map";
+
+.abilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    &__button {
+        color: map-get($colors, "blue");
+        border: 1px solid map-get($colors, "blue");
+        padding: .636rem .526rem;
+        border-radius: .656rem;
+        background-color: map-get($colors, "light-grass-green");
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            filter: brightness(1.15);                                
+        }
+    }
+}
+
+.ability {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    color: map-get($colors, "blue");
+
+    &__title {        
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
