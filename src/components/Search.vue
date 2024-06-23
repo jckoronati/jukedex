@@ -1,10 +1,9 @@
 <script setup>
 import { reactive } from 'vue';
 import Pokemon from './Pokemon.vue';
+import { store } from '../store';
 
 const keyword = defineModel("keyword", { default: '' });
-
-const pokemonData = reactive({});
 
 const responseStatus = reactive({ status: null });
 
@@ -13,7 +12,7 @@ async function fetchPokeData(keyword) {
 
     const result = await fetch(url + keyword.toLowerCase());
 
-    responseStatus.status = result.status;
+    responseStatus.status = 200;
 
     if (responseStatus.status !== 200) {
         return;
@@ -21,7 +20,15 @@ async function fetchPokeData(keyword) {
 
     const data = await result.json();
 
-    Object.assign(pokemonData, data);    
+    store.setPokemon(data);    
+    store.setAbilities(data.abilities);
+
+    /**
+     * clean ability component
+     * when a new pokemon is
+     * required
+     */
+    store.setAbility({}); 
 }
 </script>
 
@@ -37,7 +44,7 @@ async function fetchPokeData(keyword) {
                     </div>
                 </div>
             </div>
-            <Pokemon :pokemon="pokemonData" :status="responseStatus.status"/>
+            <Pokemon :pokemon="store.pokemon" :status="responseStatus.status"/>
             <div class="fail-component" v-if="responseStatus.status !== null && responseStatus.status !== 200">
                 <h2 class="fail-component__title">Something went wrong!</h2>
                 <small class="fail-component__disclaimer">Try again later.</small>                

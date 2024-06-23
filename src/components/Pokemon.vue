@@ -1,4 +1,5 @@
 <script setup>
+import { store } from '../store';
 import Abilities from './Abilities.vue';
 
 const props = defineProps({ pokemon: { default: null }, status: { default: null } });
@@ -17,7 +18,7 @@ const props = defineProps({ pokemon: { default: null }, status: { default: null 
         <div class="pokemon-info__group">
             <div class="pokemon-info__group-abilities">
                 <h2 class="pokemon-info__group-abilities-title">Abilities</h2>
-                <Abilities :abilities="props.pokemon.abilities" />
+                <Abilities :abilities="store.abilities" />
             </div>
         </div>
     </div>
